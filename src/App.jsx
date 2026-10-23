@@ -17,6 +17,7 @@ export default function App() {
   useEffect(() => {
     const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
     lenisRef.current = lenis;
+    if (import.meta.env.DEV) window.__lenis = lenis; // handy for browser-based testing
 
     let raf;
     const loop = (time) => {

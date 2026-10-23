@@ -17,10 +17,14 @@ export default function ShowcaseBand() {
         </h2>
       </div>
 
-      <div className="relative mt-12 overflow-x-clip py-8">
+      <div className="no-bar relative mt-12 max-2xl:overflow-x-auto max-2xl:pb-6 2xl:overflow-x-clip py-8" data-lenis-prevent>
         <div className="flex gap-10 px-6 md:px-10" data-parallax="-0.12">
           {WORKS.map((w, i) => (
-            <figure key={w.title} className="w-60 shrink-0 md:w-80">
+            <div
+              key={w.title}
+              className="reveal w-60 shrink-0 md:w-80"
+              style={{ "--reveal-delay": `${i * 120}ms` }}
+            >
               <figure
                 className={`group relative overflow-hidden ${
                   i % 2 ? "h-72 md:h-96" : "h-72 rounded-t-full md:h-96"
@@ -40,7 +44,7 @@ export default function ShowcaseBand() {
                 <span className="font-semibold">{w.title}</span>
                 <span className="font-serif italic">{w.meta}</span>
               </p>
-            </figure>
+            </div>
           ))}
         </div>
       </div>
@@ -54,9 +58,9 @@ export default function ShowcaseBand() {
           data-parallax="-0.07"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
-        <figcaption className="absolute bottom-8 left-6 text-cream md:left-16">
+        <figcaption className="reveal absolute bottom-8 left-6 text-cream md:left-16">
           <p className="label text-cream/80">Highlight of the month</p>
-          <h3 className="mt-1 font-serif text-4xl italic md:text-6xl">
+          <h3 className="reveal mt-1 font-serif text-4xl italic md:text-6xl" style={{ "--reveal-delay": "150ms" }}>
             The Grand Halls of TriLume
           </h3>
         </figcaption>

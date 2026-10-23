@@ -20,7 +20,7 @@ export default function Navbar() {
           : "bg-transparent text-cream"
       }`}
     >
-      <nav className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-6 py-4 md:px-10">
+      <nav className="nav-enter mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-6 py-4 md:px-10">
         <ul className="label hidden gap-6 lg:flex">
           {LINKS.slice(0, 3).map((l) => (
             <li key={l}>
