@@ -32,9 +32,17 @@ export default function Navbar() {
         </ul>
         <span className="label lg:hidden">Menu</span>
 
-        <a href="#home" className="justify-self-center font-serif text-2xl tracking-wide">
-          <span aria-hidden>✦ </span>TriLume
-        </a>
+        <div className="flex flex-col items-center justify-self-center">
+          <a href="#home" className="justify-self-center font-serif text-2xl tracking-wide">
+            <span aria-hidden>✦ </span>TriLume
+          </a>
+          <a
+            href="#contact"
+            className="label mt-1 rounded-full border border-cream/40 px-3 py-1.5 text-[0.55rem] transition-colors hover:bg-cream hover:text-ink"
+          >
+            Book a visit
+          </a>
+        </div>
 
         <ul className="label hidden justify-end gap-6 lg:flex">
           {LINKS.slice(3).map((l) => (
@@ -45,12 +53,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <a
-          href="#contact"
-          className="label justify-self-end rounded-full border border-cream/40 px-4 py-2 transition-colors hover:bg-cream hover:text-ink"
-        >
-          Book a visit
-        </a>
       </nav>
     </header>
   );
