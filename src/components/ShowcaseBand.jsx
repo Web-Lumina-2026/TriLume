@@ -1,9 +1,13 @@
-import Artwork, { PALETTES } from "./Artwork.jsx";
+/** Full-bleed band: big italic headline + parallax artwork row (Fayum portraits). */
 
-/** Full-bleed band: big italic headline + horizontally drifting art row. */
+const WORKS = [
+  { title: "Portrait of Boy Eutyches", meta: "Roman Egypt, A.D. 100–150", src: "/images/boy-eutyches.jpg" },
+  { title: "Fayum Portrait", meta: "Roman Egypt, A.D. 120–140", src: "/images/fayum.jpg" },
+  { title: "Lady in Blue", meta: "H. Siemiradzki, 1890", src: "/images/lady-blue.jpg" },
+  { title: "Florence Nightingale", meta: "England, A.D. 1854", src: "/images/nightingale.jpg" },
+];
+
 export default function ShowcaseBand() {
-  const arts = Object.entries(PALETTES);
-
   return (
     <section id="gallery" className="relative bg-cream text-ink">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
@@ -15,22 +19,27 @@ export default function ShowcaseBand() {
 
       <div className="relative mt-12 overflow-x-clip py-8">
         <div className="flex gap-10 px-6 md:px-10" data-parallax="-0.12">
-          {arts.map(([name, palette], i) => (
-            <figure key={name} className="w-60 shrink-0 md:w-80">
-              <Artwork
-                palette={palette}
-                className={i % 2 ? "h-72 md:h-96" : "h-56 rounded-full md:h-72"}
+          {WORKS.map((w, i) => (
+            <figure key={w.title} className="w-60 shrink-0 md:w-80">
+              <figure
+                className={`group relative overflow-hidden ${
+                  i % 2 ? "h-72 md:h-96" : "h-72 rounded-t-full md:h-96"
+                }`}
               >
-                <span className="label absolute bottom-4 left-4 text-cream">
-                  {name}
-                </span>
-              </Artwork>
-              <figcaption className="label mt-3 flex justify-between text-ink/70">
-                <span>A.D. 1960–2030</span>
-                <span className="font-serif text-xs italic tracking-normal normal-case">
-                  Discover →
-                </span>
-              </figcaption>
+                <img
+                  src={w.src}
+                  alt={w.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <figcaption className="label absolute bottom-4 left-4 text-cream drop-shadow">
+                  {w.title}
+                </figcaption>
+              </figure>
+              <p className="mt-3 flex justify-between text-[0.7rem] text-ink/70">
+                <span className="font-semibold">{w.title}</span>
+                <span className="font-serif italic">{w.meta}</span>
+              </p>
             </figure>
           ))}
         </div>
