@@ -25,22 +25,30 @@ export default function ShowcaseBand() {
               className="reveal w-60 shrink-0 md:w-80"
               style={{ "--reveal-delay": `${i * 120}ms` }}
             >
-              <figure
-                className={`group relative overflow-hidden ${
-                  i % 2 ? "h-72 md:h-96" : "h-72 rounded-t-full md:h-96"
+              <div
+                className={`frame relative h-72 md:h-96 ${
+                  i % 2 ? "frame--brass rounded-2xl" : "frame--wood rounded-b-xl rounded-t-full"
                 }`}
               >
-                <img
-                  src={w.src}
-                  alt={w.title}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <figcaption className="label absolute bottom-4 left-4 text-cream drop-shadow">
-                  {w.title}
-                </figcaption>
-              </figure>
-              <p className="mt-3 flex justify-between text-[0.7rem] text-ink/70">
+                <div className="frame-liner h-full rounded-[inherit]">
+                  <figure
+                    className={`group frame-inset relative h-full w-full overflow-hidden rounded-[inherit] ${
+                      i % 2 ? "" : "rounded-t-full"
+                    }`}
+                  >
+                    <img
+                      src={w.src}
+                      alt={w.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <figcaption className="label absolute bottom-4 left-4 z-20 text-cream drop-shadow">
+                      {w.title}
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <p className="mt-3 flex justify-between px-1 text-[0.7rem] text-ink/70">
                 <span className="font-semibold">{w.title}</span>
                 <span className="font-serif italic">{w.meta}</span>
               </p>
