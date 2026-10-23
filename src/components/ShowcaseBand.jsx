@@ -36,6 +36,23 @@ export default function ShowcaseBand() {
         </div>
       </div>
 
+      {/* full-bleed “Foscari” style band */}
+      <figure className="relative h-[62vh] overflow-hidden">
+        <img
+          src="/images/grand-hall.jpg"
+          alt="Grand stone hall with rows of arches at the TriLume museum"
+          className="h-[120%] w-full object-cover"
+          data-parallax="-0.07"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
+        <figcaption className="absolute bottom-8 left-6 text-cream md:left-16">
+          <p className="label text-cream/80">Highlight of the month</p>
+          <h3 className="mt-1 font-serif text-4xl italic md:text-6xl">
+            The Grand Halls of TriLume
+          </h3>
+        </figcaption>
+      </figure>
+
       {/* marquee headline riding the dark band below */}
       <div className="relative bg-espresso py-16 text-cream/20">
         <div className="marquee-track">

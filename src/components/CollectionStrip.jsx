@@ -1,11 +1,17 @@
-import Artwork, { PALETTES } from "./Artwork.jsx";
+const PHOTOS = [
+  "/images/frames-wall.jpg",
+  "/images/gallery-wall.jpg",
+  "/images/grand-hall.jpg",
+  "/images/statue-arch.jpg",
+  "/images/portrait.avif",
+];
 
 const PIECES = [
-  ["Eclipse Study I", "Studio TriLume", PALETTES.kiln],
-  ["Parallax Veil", "M. Okafor", PALETTES.tide],
-  ["Harvest Reverb", "L. Contini", PALETTES.harvest],
-  ["Bronze Hour", "Studio TriLume", PALETTES.bronze],
-  ["Dusk Grammar", "R. Vitali", PALETTES.dusk],
+  ["Eclipse Study I", "Studio TriLume"],
+  ["Parallax Veil", "M. Okafor"],
+  ["Harvest Reverb", "L. Contini"],
+  ["Bronze Hour", "Studio TriLume"],
+  ["Dusk Grammar", "R. Vitali"],
 ];
 
 /** Cream card carousel echoing “The Collection — 680 pieces online”. */
@@ -28,16 +34,22 @@ export default function CollectionStrip() {
 
       <div className="overflow-x-auto pb-4" data-lenis-prevent>
         <ul className="flex w-max gap-5 px-6 md:px-10">
-          {row.map(([title, artist, palette], i) => (
+          {row.map(([title, artist], i) => (
             <li key={`${title}-${i}`} className="group w-48 md:w-56">
               <div className="overflow-hidden rounded-md bg-white p-2 shadow-sm transition-shadow group-hover:shadow-lg">
-                <Artwork palette={palette} className="h-56 rounded-sm">
+                <figure className="relative h-56 overflow-hidden rounded-sm">
+                  <img
+                    src={PHOTOS[i % PHOTOS.length]}
+                    alt={`${title} — ${artist}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                   {i % 2 === 0 && (
-                    <span className="label absolute bottom-3 left-3 text-cream/90">
+                    <span className="label absolute bottom-3 left-3 text-cream drop-shadow">
                       № {String(i + 1).padStart(2, "0")}
                     </span>
                   )}
-                </Artwork>
+                </figure>
                 <p className="mt-2 text-[0.7rem] leading-tight text-ink/85">
                   <span className="font-semibold">{title}.</span> {artist}
                 </p>

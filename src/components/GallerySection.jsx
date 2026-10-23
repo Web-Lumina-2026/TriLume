@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Artwork, { PALETTES } from "./Artwork.jsx";
 
 const PIECES = [
   {
@@ -7,14 +6,14 @@ const PIECES = [
     author: "Atelier TriLume",
     blurb:
       "Shown at the Trilume opening exhibition of 2001, a few months after the entry of the atelier into Milan, it celebrated the successful conclusion of the struggles of the…",
-    palette: PALETTES.kiln,
-    arch: true,
+    img: "/images/frames-wall.jpg",
     meta: ["Title: Marriage of glass", "Author: Atelier TriLume", "Date: 2001", "Technique: cast glass, oil-warm LED", "Dim: 170 × 117 cm", "Room: 9"],
   },
   {
     heading: ["Afterglow", "Nocturne"],
     author: "Kavya Sandstone",
-    palette: PALETTES.veil,
+    img: "/images/statue-arch.jpg",
+    arch: true,
     meta: ["Title: Kiss", "Author: Kavya Sandstone", "Date: 1999", "Technique: bronze & neon"],
   },
 ];
@@ -65,16 +64,27 @@ export default function GallerySection() {
           }`}
           data-parallax="-0.06"
         >
-          <Artwork palette={PIECES[0].palette} className="col-span-2 h-64 rounded-t-full sm:h-[26rem]">
-            <span className="label absolute left-6 top-10 text-cream/90">09</span>
-          </Artwork>
+          <figure className="relative col-span-2 h-64 overflow-hidden rounded-t-full sm:h-[26rem]">
+            <img src={PIECES[0].img} alt={PIECES[0].heading.join(" ")} className="h-full w-full object-cover" />
+            <figcaption className="label absolute left-6 top-10 text-cream drop-shadow">
+              № 09 — {PIECES[0].author}
+            </figcaption>
+          </figure>
 
           {PIECES.slice(1).map((p) => (
-            <div key={p.author}>
-              <Artwork palette={p.palette} className={p.arch ? "rounded-t-full h-72" : "h-56 rounded-sm text-cream"}>
-                <span className="label absolute left-4 bottom-4">{p.author}</span>
-              </Artwork>
-            </div>
+            <figure
+              key={p.author}
+              className={`relative overflow-hidden ${p.arch ? "h-72 rounded-t-full" : "h-56"}`}
+            >
+              <img
+                src={p.img}
+                alt={p.heading.join(" ")}
+                className={`h-full w-full object-cover transition-transform duration-700 hover:scale-105 ${p.arch ? "" : "rounded-sm"}`}
+              />
+              <figcaption className="label absolute left-4 bottom-4 p-1 text-cream drop-shadow">
+                {p.author}
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>

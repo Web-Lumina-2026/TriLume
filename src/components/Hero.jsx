@@ -23,6 +23,12 @@ export default function Hero() {
       className="relative flex min-h-svh items-center overflow-hidden bg-ink text-cream"
     >
       <HeroCanvas />
+      <img
+        src="/images/statue-arch.jpg"
+        alt="Statue of a draped figure beneath the vaulted arches of the TriLume halls"
+        className="absolute inset-0 h-full w-full object-cover object-[50%_30%] opacity-90"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/25 to-ink/55" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-32 pt-36 md:px-10">
         <p
@@ -32,7 +38,7 @@ export default function Hero() {
           Atelier of
         </p>
         <h1
-          className="text-center font-serif text-[clamp(4.5rem,18vw,15rem)] leading-[0.85] tracking-tight"
+          className="text-center font-serif text-[clamp(4.5rem,18vw,15rem)] font-bold leading-[0.85] tracking-tight"
           style={{ transform: `translate(${tilt.x * -10}px, ${tilt.y * -6}px)` }}
         >
           TriLume
@@ -40,20 +46,20 @@ export default function Hero() {
 
         <div className="mt-14 grid gap-10 md:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <h2 className="font-serif text-4xl italic md:text-6xl">
+            <h2 className="font-serif text-4xl font-bold italic md:text-6xl">
               <span aria-hidden className="not-italic mr-3">✦</span>
               Masterpieces
             </h2>
-            <p className="mt-2 font-sans text-2xl font-light tracking-wide md:text-4xl">
+            <p className="mt-2 font-sans text-2xl font-semibold tracking-wide md:text-4xl">
               of light on display
             </p>
 
-            <p className="label mt-8 text-cream/90">
+            <p className="label mt-6 font-bold text-cream/90">
               Discover the collection
               <br />
               of the Trilume atelier
             </p>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/70">
+            <p className="mt-8 max-w-md font-serif text-lg italic leading-relaxed text-cream/80">
               A guided tour for the visitor who arrives at TriLume for the first
               time or wants a better appreciation of the light, its history, and
               the analysis of its most representative works.
