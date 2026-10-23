@@ -3,11 +3,11 @@ import { useState } from "react";
 const PIECES = [
   {
     heading: ["The Marriage", "of Glass & Light"],
-    author: "Atelier TriLume",
+    author: "Florence",
     blurb:
       "Shown at the Trilume opening exhibition of 2001, a few months after the entry of the atelier into Milan, it celebrated the successful conclusion of the struggles of the…",
     img: "/images/frames-wall.jpg",
-    meta: ["Title: Marriage of glass", "Author: Atelier TriLume", "Date: 2001", "Technique: cast glass, oil-warm LED", "Dim: 170 × 117 cm", "Room: 9"],
+    meta: ["Title: Marriage of glass", "Author: Florence", "Date: 2001", "Technique: cast glass, oil-warm LED", "Dim: 170 × 117 cm", "Room: 9"],
   },
   {
     heading: ["Afterglow", "Nocturne"],
