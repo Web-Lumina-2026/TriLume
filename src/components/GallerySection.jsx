@@ -10,11 +10,11 @@ const PIECES = [
     meta: ["Title: Marriage of glass", "Author: Florence", "Date: 2001", "Technique: cast glass, oil-warm LED", "Dim: 170 × 117 cm", "Room: 9"],
   },
   {
-    heading: ["Marriage", "of Paint"],
+    heading: ["Marriage", "of Light"],
     author: "Florence",
     img: "/images/statue-arch.jpg",
     arch: true,
-    meta: ["Title: Marriage of paint", "Author: Florence", "Date: 1999", "Technique: bronze & neon"],
+    meta: ["Title: Marriage of light", "Author: Florence", "Date: 1999", "Technique: bronze & neon"],
   },
 ];
 
