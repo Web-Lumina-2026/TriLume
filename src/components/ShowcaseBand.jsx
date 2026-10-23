@@ -26,7 +26,7 @@ export default function ShowcaseBand() {
               style={{ "--reveal-delay": `${i * 120}ms` }}
             >
               <div
-                className={`frame relative h-72 md:h-96 ${
+                className={`frame exhibit-card relative h-72 md:h-96 ${
                   i % 2 ? "frame--brass rounded-2xl" : "frame--wood rounded-b-xl rounded-t-full"
                 }`}
               >
@@ -62,6 +62,7 @@ export default function ShowcaseBand() {
         <img
           src="/images/grand-hall.jpg"
           alt="Grand stone hall with rows of arches at the TriLume museum"
+          data-cursor-ignore
           className="h-[120%] w-full object-cover"
           data-parallax="-0.07"
         />

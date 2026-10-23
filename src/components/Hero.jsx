@@ -26,6 +26,7 @@ export default function Hero() {
       <img
         src="/images/statue-arch.jpg"
         alt="Statue of a draped figure beneath the vaulted arches of the TriLume halls"
+        data-cursor-ignore
         className="absolute inset-0 h-full w-full object-cover object-[50%_30%] opacity-90"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/25 to-ink/55" />

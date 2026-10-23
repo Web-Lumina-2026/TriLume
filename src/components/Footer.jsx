@@ -10,13 +10,14 @@ export default function Footer() {
       {/* floating polaroid */}
       <div className="pointer-events-none absolute -left-10 top-10 hidden rotate-[-8deg] lg:block" data-parallax="-0.1">
         <div className="w-40 rotate-3 bg-parchment p-2 pb-8 shadow-xl">
-        <div className="h-40 overflow-hidden">
-          <img
-            src="/images/gallery-wall.jpg"
-            alt="TriLume gallery wall hung with gilt-framed works"
-            className="h-full w-full object-cover"
-          />
-        </div>
+          <div className="h-40 overflow-hidden rounded-sm">
+            <img
+              src="/images/gallery-wall.jpg"
+              alt="TriLume gallery wall hung with gilt-framed works"
+              data-cursor-ignore
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
       </div>
 

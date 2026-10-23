@@ -7,6 +7,7 @@ import GallerySection from "./components/GallerySection.jsx";
 import ShowcaseBand from "./components/ShowcaseBand.jsx";
 import CollectionStrip from "./components/CollectionStrip.jsx";
 import Footer from "./components/Footer.jsx";
+import CustomCursor from "./components/CustomCursor.jsx";
 import { useReveal, useParallax } from "./hooks/useReveal.js";
 
 export default function App() {
@@ -56,6 +57,7 @@ export default function App() {
         <CollectionStrip />
       </main>
       <Footer />
+      <CustomCursor />
     </>
   );
 }

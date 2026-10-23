@@ -33,7 +33,7 @@ export default function Navbar() {
         <span className="label lg:hidden">Menu</span>
 
         <div className="flex flex-col items-center justify-self-center">
-          <a href="#home" className="justify-self-center font-serif text-2xl tracking-wide">
+          <a href="#home" className="blend-hover justify-self-center font-serif text-2xl tracking-wide">
             <span aria-hidden>✦ </span>TriLume
           </a>
           <a

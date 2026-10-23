@@ -64,7 +64,10 @@ export default function GallerySection() {
           }`}
           data-parallax="-0.06"
         >
-          <figure className="relative col-span-2 h-64 overflow-hidden rounded-t-full sm:h-[26rem]">
+          <figure
+            className="exhibit-card relative col-span-2 h-64 overflow-hidden rounded-t-full sm:h-[26rem]"
+            data-cursor="Discover"
+          >
             <img src={PIECES[0].img} alt={PIECES[0].heading.join(" ")} className="h-full w-full object-cover" />
             <figcaption className="label absolute left-6 top-10 text-cream drop-shadow">
               № 09 — {PIECES[0].author}
@@ -74,7 +77,8 @@ export default function GallerySection() {
           {PIECES.slice(1).map((p) => (
             <figure
               key={p.author}
-              className={`relative overflow-hidden ${p.arch ? "h-72 rounded-t-full" : "h-56"}`}
+              className={`exhibit-card relative overflow-hidden ${p.arch ? "h-72 rounded-t-full" : "h-56"}`}
+              data-cursor="Discover"
             >
               <img
                 src={p.img}

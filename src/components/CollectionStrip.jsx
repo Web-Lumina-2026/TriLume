@@ -36,7 +36,7 @@ export default function CollectionStrip() {
         <ul className="flex w-max gap-5 px-6 md:px-10">
           {row.map(([title, artist], i) => (
             <li key={`${title}-${i}`} className="group w-48 md:w-56">
-              <div className="overflow-hidden rounded-md bg-white p-2 shadow-sm transition-shadow group-hover:shadow-lg">
+              <div className="exhibit-card overflow-hidden rounded-md bg-white p-2 shadow-sm transition-shadow group-hover:shadow-lg">
                 <figure className="relative h-56 overflow-hidden rounded-sm">
                   <img
                     src={PHOTOS[i % PHOTOS.length]}
